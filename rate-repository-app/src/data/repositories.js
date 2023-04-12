@@ -3,7 +3,7 @@ export default [
         id: 'juansuarezdev.juansuarez.dev',
         fullname: 'juansuarezdev/juansuarez.dev',
         description: 'Portfolio de un full-stack developer',
-        language: 'javascript',
+        language: 'HTML',
         forksCount: 3123,
         stargazersCount: 52869,
         ratingAverage: 0,

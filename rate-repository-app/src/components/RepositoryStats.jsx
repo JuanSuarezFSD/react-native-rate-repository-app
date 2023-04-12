@@ -15,38 +15,42 @@ const RepositoryStats = props => {
             
             <View>
                 <StyledText fontWeight='bold' align='center'>
-                    Stars: 
-                </StyledText>
-                <StyledText align='center'>
                     {parseThousand(props.stargazersCount)} 
                 </StyledText>
+                <StyledText  align='center'>
+                    Stars 
+                </StyledText>
+                
             </View>
             
             <View>
                 <StyledText fontWeight='bold' align='center'>
-                Forks: 
-                </StyledText>
-                <StyledText align='center'>
                     {parseThousand(props.forksCount)}
                 </StyledText>
+                <StyledText  align='center'>
+                Forks 
+                </StyledText>
+                
             </View>
             
             <View>
                 <StyledText fontWeight='bold' align='center'>
-                    Review:  
-                </StyledText>
-                <StyledText align='center'>
                     {parseThousand(props.reviewCount)}
                 </StyledText>
+                <StyledText  align='center'>
+                    Review 
+                </StyledText>
+                
             </View>
 
-            <View>
-                <StyledText fontWeight='bold' align='center'>
-                    Rating: 
-                </StyledText>
-                <StyledText  align='center'>
+            <View> 
+                <StyledText fontWeight='bold'  align='center'>
                     {parseThousand(props.ratingAverage)}
                 </StyledText>
+                <StyledText  align='center'>
+                    Rating 
+                </StyledText>
+               
             </View>
 
             
