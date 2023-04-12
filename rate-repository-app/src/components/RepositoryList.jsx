@@ -1,24 +1,19 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 import repositories from '../data/repositories.js'
+import { FlatList } from "react-native";
+import RepositoryItems from "./RepositoryItem.jsx";
 
 const RepositoryList = () => {
     return (
-        <View>
-            {repositories.map( repo => (
-                <View key={repo.id}>
-                    <Text>Id: {repo.id}</Text>
-                    <Text>Full Name: {repo.fullname}</Text>
-                    <Text>Description: {repo.description}</Text>
-                    <Text>Language: {repo.language}</Text>
-                    <Text>Stars: {repo.stargazersCount}</Text>
-                    <Text>Forks: {repo.forksCount}</Text>
-                    <Text>Review: {repo.reviewCount}</Text>
-                    <Text>Rating: {repo.ratingAverage}</Text>
-                </View>
-            )
+        <FlatList 
+            data={repositories}
+            ItemSeparatorComponent={() => <Text></Text>}
+            renderItem = {({ item: repo }) => (
+                <RepositoryItems {... repo}/>
             )}
-        </View>
+        >
+        </FlatList>
     )
 }
 
