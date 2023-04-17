@@ -1,30 +1,59 @@
-import React from "react"
-import { View, StyleSheet} from 'react-native'
-import StyledText from "./StyledText"
-import Constants from 'expo-constants'
-import theme from "../theme"
+import React from "react";
+import { View, StyleSheet, ScrollView } from "react-native";
+import StyledText from "./StyledText";
+import Constants from "expo-constants";
+import theme from "../theme";
+import { Link, useLocation } from "react-router-native";
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: theme.appBar.primary,
-        paddingTop: Constants.statusBarHeight + 15,
-        paddingBottom: 10,
-        paddingLeft: 10
-    },
-    text: {
-        color: theme.appBar.textPrimary,
-        fontSize: 22
-    }
-})
+  container: {
+    backgroundColor: theme.appBar.primary,
+    flexDirection: "row",
+    paddingTop: Constants.statusBarHeight + 15,
+  },
+  scroll: {
+    paddingBottom: 15,
+  },
+  text: {
+    color: theme.appBar.textSecondary,
+    fontSize: 22,
+    paddingHorizontal: 10,
+  },
+  active: {
+    color: theme.appBar.textPrimary,
+  },
+});
 
-const AppBar = () => {
-    return(
-        <View style={styles.container}>
-            <StyledText fontWeight='bold' style={styles.text}>
-                GitHub Repositories App
-            </StyledText>
-        </View>
-    )
+const AppBarTab = ({ children, to }) => {
+
+  const { pathname } = useLocation()
+  const active = pathname === to
+
+  const textStyles = [
+    styles.text, 
+    active && styles.active
+  ]
+
+  return (
+    <Link to={to} underlayColor={"transparent"}>
+      <StyledText fontWeight="bold" style={textStyles}>
+        {children}
+      </StyledText>
+    </Link>
+  )
 }
 
-export default AppBar
+const AppBar = () => {
+  return (
+    <View style={styles.container}>
+      <ScrollView horizontal style={styles.scroll}>
+        <AppBarTab active to="/">
+          Repositories
+        </AppBarTab>
+        <AppBarTab to="/singin">Sing In</AppBarTab>
+      </ScrollView>
+    </View>
+  );
+};
+
+export default AppBar;
