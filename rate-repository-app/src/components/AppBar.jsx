@@ -41,7 +41,7 @@ const AppBarTab = ({ children, to }) => {
       </StyledText>
     </Link>
   )
-}
+};
 
 const AppBar = () => {
   return (
@@ -50,7 +50,7 @@ const AppBar = () => {
         <AppBarTab active to="/">
           Repositories
         </AppBarTab>
-        <AppBarTab to="/singin">Sing In</AppBarTab>
+        <AppBarTab to="/singin">Sign In</AppBarTab>
       </ScrollView>
     </View>
   );

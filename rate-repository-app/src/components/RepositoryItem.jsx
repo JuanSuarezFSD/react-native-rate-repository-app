@@ -41,7 +41,11 @@ const styles = StyleSheet.create({
     lenguage: {
         padding: 4,
         color: theme.colors.white,
-        backgroundColor: theme.colors.primary,
+        backgroundColor: Platform.select({
+            ios: theme.colors.primary,
+            android: theme.colors.textSecondary,
+            default: 'purple'
+        }),
         alignSelf: 'flex-start',
         marginVertical: 4,
         borderRadius: 5,
