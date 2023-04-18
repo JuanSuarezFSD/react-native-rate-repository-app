@@ -20,7 +20,7 @@ const StyledTextInput= ({style = {}, error, ...props}) => {
         styles.textInput, 
         style,
         error && styles.error
-    ];
+    ]
 
     return <TextInput style={inputStyle} {...props}/>
 }
