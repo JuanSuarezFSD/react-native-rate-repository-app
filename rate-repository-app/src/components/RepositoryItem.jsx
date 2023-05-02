@@ -5,7 +5,7 @@ import RepositoryStats from "./RepositoryStats"
 import theme from "../theme"
 
 
-const RepositoryItemHeader = ({ ownerAvatarUrl, fullname, description, language }) => (
+const RepositoryItemHeader = ({ ownerAvatarUrl, name, description, language }) => (
     <View style={{flexDirection: 'row', paddingBottom: 2,}}>
             <View style={{paddingRight: 10}}>
                 <Image 
@@ -15,7 +15,7 @@ const RepositoryItemHeader = ({ ownerAvatarUrl, fullname, description, language 
             </View>
             
             <View style={{flex:1,paddingBottom: 10, justifyContent: 'center'}}>
-                <StyledText fontWeight='bold' fontSize='heading'>{fullname}</StyledText>
+                <StyledText fontWeight='bold' fontSize='heading'>{name}</StyledText>
                 <StyledText color='secondary'>{description}</StyledText>
                 <StyledText style={styles.lenguage}>{language}</StyledText>
             </View>
